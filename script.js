@@ -20,8 +20,9 @@ function getZipCode() {
       container.className = "container";
       container.classList.add(getBackgroundImageClass(tempF));
       const locationAndTempMarkup = `
-    <div> The current temperature in ${data.location.name}, ${data.location.region} is ${data.current.temp_f}℉ 
-    </div>`;
+    <div> ${data.location.name}, ${data.location.region}  ${data.current.temp_f}℉ 
+    </div>
+    <div> <h2> ${data.current.temp_f}°F</h2></div>`;
       document
         .querySelector("div.weather-info")
         .insertAdjacentHTML("beforeend", locationAndTempMarkup);
