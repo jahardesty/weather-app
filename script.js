@@ -1,9 +1,5 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function () {
-  getZipCode();
-});
-
 function getZipCode() {
   let zipCode = document.getElementById("zipcode").value;
   console.log(zipCode);
@@ -20,12 +16,11 @@ function getZipCode() {
       container.className = "container";
       container.classList.add(getBackgroundImageClass(tempF));
       const locationAndTempMarkup = `
-    <div> ${data.location.name}, ${data.location.region}  ${data.current.temp_f}℉ 
-    </div>
-    <div> <h2> ${data.current.temp_f}°F</h2></div>`;
+    <div> ${data.location.name}, ${data.location.region}</div>
+    <div> <h4> ${data.current.temp_f}°F</h4></div>`;
       document
         .querySelector("div.weather-info")
-        .insertAdjacentHTML("beforeend", locationAndTempMarkup);
+        .insertAdjacentHTML("afterbegin", locationAndTempMarkup);
     });
 
   function getBackgroundImageClass(tempF) {
@@ -37,6 +32,12 @@ function getZipCode() {
       return "container";
     }
   }
+  function showClearPageButton (){
+    let clearButton = document.getElementById('clearPage');
+    clearButton.style.display = "block";
+  }
+showClearPageButton();
+
 }
 
 function clearPage() {

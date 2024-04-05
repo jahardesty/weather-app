@@ -31,8 +31,10 @@
         <button id="searchButton" onclick="getZipCode()">
           <img src="./search.png" />
         </button>
-        <button id="clearPage" onclick="clearPage()">Clear</button>
-        <div class="weather-info"><img src="" class="weather-icon"</div>
+        <button id="clearPage" onclick="clearPage()" style='display: none;'>Clear</button>
+        <div id="weather-info" class='weather-info'>
+          <img id="weather-icon" src="" alt="Weather Icon">
+          </div>
       </div>
     </div>
     <script src="script.js"></script>
