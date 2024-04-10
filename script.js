@@ -38,6 +38,18 @@ function getZipCode() {
   }
 showClearPageButton();
 
+  function hideSearchInput () {
+    let searchBar = document.getElementById('zipcode');
+    searchBar.style.display = "none";
+ }
+hideSearchInput(); 
+
+ function hideSearchButton () {
+    let searchButton = document.getElementById('searchButton');
+    searchButton.style.display = "none";
+ }
+ hideSearchButton();
+
 }
 
 function clearPage() {
