@@ -11,6 +11,7 @@ function getZipCode() {
       return res.json();
     })
     .then((data) => {
+      console.log(data);
       const tempF = data.current.temp_f;
       const container = document.querySelector(".container");
       container.className = "container";
