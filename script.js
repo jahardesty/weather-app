@@ -16,7 +16,7 @@ function getZipCode() {
       container.className = "container";
       container.classList.add(getBackgroundImageClass(tempF));
       const locationAndTempMarkup = `
-    <div> ${data.location.name}, ${data.location.region}</div>
+    <div> <h3> ${data.location.name}, ${data.location.region} </h3></div>
     <div> <h4> ${data.current.temp_f}°F</h4></div>`;
       document
         .querySelector("div.weather-info")

@@ -19,6 +19,7 @@ body {
   align-items: center;
   height: 60vh;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .search {
@@ -55,16 +56,14 @@ body {
   margin: 10px;
 }
 
+.clear-button {
+  margin-top: auto;
+  align-self: flex-end;
+}
+
 button img {
   width: 30px;
   height: 30px;
-}
-
-#clearPage {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .container.warm {
