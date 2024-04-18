@@ -60,10 +60,6 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  /* margin-top: auto;
-  margin-left: auto;
-  align-self: flex-end; */
-
 }
 
 button img {
@@ -86,4 +82,3 @@ button img {
   position: relative;
   z-index: 1;
 }
-
