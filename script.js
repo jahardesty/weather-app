@@ -13,6 +13,7 @@ function getZipCode() {
     .then((data) => {
       console.log(data);
       const tempF = data.current.temp_f;
+      const condition = data.current.condition.code;
       const container = document.querySelector(".container");
       container.className = "container";
       container.classList.add(getBackgroundImageClass(tempF));
@@ -22,7 +23,15 @@ function getZipCode() {
       document
         .querySelector("div.weather-info")
         .insertAdjacentHTML("afterbegin", locationAndTempMarkup);
-    });
+  
+  fetch('weatherData.json')
+    .then(response => response.json())
+    .then(weatherData => {
+      // const conditionCode = condition;
+      const weatherCode = weatherData.find(entry => entry.code === condition);
+      console.log(weatherCode);
+    })
+  });
 
   function getBackgroundImageClass(tempF) {
     if (tempF >= 50) {

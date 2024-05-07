@@ -30,6 +30,9 @@ body {
   justify-content: space-between;
   color: #555;
 }
+.linkBack {
+  text-align: center;
+}
 
 .search input {
   border: 0;
@@ -68,7 +71,7 @@ button img {
 }
 
 .container.warm {
-  background-image: url("sun.gif");
+  background-image: url("icons/day/116.png");
   background-position: center;
   z-index: 0;
   /* background-image: url("warmImage.jpeg"); */
