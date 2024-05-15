@@ -31,16 +31,32 @@
         <button id="searchButton" onclick="getZipCode()">
           <img src="./search.png" />
         </button>
-        <div id="weather-info" class='weather-info'>
-          <!-- <img id="weather-icon" src="sunny.gif" alt="Weather Icon"> -->
-          
+        <div id="weather-info" class="weather-info">
+          <img
+            id="weatherIcon"
+            src=""
+            alt="Weather Icon"
+            style="display: none"
+          />
         </div>
-        <button id="clearPage" class="clear-button" onclick="clearPage()" style='display: none;'>Clear</button>
+        <button
+          id="clearPage"
+          class="clear-button"
+          onclick="clearPage()"
+          style="display: none"
+        >
+          Clear
+        </button>
       </div>
-     </div>
+    </div>
     <script src="script.js"></script>
   </body>
-  <div class='linkBack'>
-  <h6>Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></h6>
-</div>
+  <div class="linkBack" id="apiCredit" style="display: none">
+    <h6>
+      Powered by
+      <a href="https://www.weatherapi.com/" title="Free Weather API"
+        >WeatherAPI.com</a
+      >
+    </h6>
+  </div>
 </html>

@@ -17,15 +17,12 @@ function getZipCode() {
       const isDay = data.current.is_day;
       let timeOfDay;
       let currentCondition;
-      const container = document.querySelector(".container");
-      container.className = "container";
-      container.classList.add(getBackgroundImageClass(tempF));
-      // if (isDay === 1) {
-      //   timeOfDay = "day";
-      //   // currentCondition =  ;
-      // } else {
-      //   timeOfDay = "night";
-      // }
+      let iconFolderPath;
+
+      // const container = document.querySelector(".container");
+      // container.className = "container";
+      // container.classList.add(getBackgroundImageClass(tempF));
+
       fetch("weatherData.json")
         .then((response) => response.json())
         .then((weatherData) => {
@@ -34,18 +31,23 @@ function getZipCode() {
           );
           const weatherDescriptionDay = weatherCode.day;
           const weatherDescriptionNight = weatherCode.night;
-          const weatherIconCode = weatherCode.icon;
+          const weatherIcon = document.getElementById("weatherIcon");
 
           if (isDay === 1) {
             timeOfDay = "day";
             currentCondition = weatherCode.day;
+            iconFolderPath = "icons/day";
+            weatherIcon.src = `${iconFolderPath}/${weatherCode.day}`;
           } else {
             timeOfDay = "night";
             currentCondition = weatherCode.night;
+            iconFolderPath = "icons/night";
           }
           console.log(weatherCode);
           console.log(timeOfDay);
-          console.log(currentCondition);
+          console.log(currentCondition, "current condition");
+          // console.log(weatherIconCode);
+          console.log(iconFolderPath);
 
           const displayCondition = `
     <div> <h5> ${currentCondition}</h5></div>`;
@@ -61,20 +63,32 @@ function getZipCode() {
             .insertAdjacentHTML("afterbegin", locationAndTempMarkup);
         });
     });
-  function getBackgroundImageClass(tempF) {
-    if (tempF >= 50) {
-      return "warm";
-    } else if (tempF <= 37) {
-      return "cold";
-    } else {
-      return "container";
-    }
+  // function getBackgroundImageClass(tempF) {
+  //   if (tempF >= 50) {
+  //     return "warm";
+  //   } else if (tempF <= 37) {
+  //     return "cold";
+  //   } else {
+  //     return "container";
+  //   }
+  // }
+  function showWeatherIconElement() {
+    let weatherIconElement = document.getElementById("weatherIcon");
+    weatherIcon.style.display = "";
   }
+  showWeatherIconElement();
+
   function showClearPageButton() {
     let clearButton = document.getElementById("clearPage");
     clearButton.style.display = "block";
   }
   showClearPageButton();
+
+  function showApiCredit() {
+    let apiCredit = document.getElementById("apiCredit");
+    apiCredit.style.display = "block";
+  }
+  showApiCredit();
 
   function hideSearchInput() {
     let searchBar = document.getElementById("zipcode");

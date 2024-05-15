@@ -71,13 +71,18 @@ button img {
 }
 
 .container.warm {
-  background-image: url("icons/night/113.png");
+  background-image: url("icons/day/116.png");
   background-position: center;
   z-index: 0;
-  /* background-image: url("warmImage.jpeg"); */
 }
 
-.container.cold {
+.weather-icon.day {
+  background-image: url("icons/day/113.png");
+  background-position: center;
+  z-index: 0;
+}
+
+.weather-icon.night {
   background-image: url("icons/night/113.png");
   background-position: center;
   z-index: 0;
