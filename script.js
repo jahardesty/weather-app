@@ -2,7 +2,6 @@
 
 function getZipCode() {
   let zipCode = document.getElementById("zipcode").value;
-  // console.log(zipCode);
 
   fetch(
     `http://api.weatherapi.com/v1/current.json?key=ae1558409c2a4c3390a163852241503&q=${zipCode}`
@@ -18,6 +17,7 @@ function getZipCode() {
       let timeOfDay;
       let currentCondition;
       let iconFolderPath;
+      // let iconCode = data.current.condition.icon;
 
       // const container = document.querySelector(".container");
       // container.className = "container";
@@ -29,25 +29,29 @@ function getZipCode() {
           const weatherCode = weatherData.find(
             (entry) => entry.code === condition
           );
-          const weatherDescriptionDay = weatherCode.day;
-          const weatherDescriptionNight = weatherCode.night;
+
           const weatherIcon = document.getElementById("weatherIcon");
+          let iconCode = weatherData.icon;
 
           if (isDay === 1) {
             timeOfDay = "day";
             currentCondition = weatherCode.day;
             iconFolderPath = "icons/day";
-            weatherIcon.src = `${iconFolderPath}/${weatherCode.day}`;
+            iconCode = weatherCode.icon;
+            weatherIcon.src = `${iconFolderPath}/${iconCode}.png`;
           } else {
             timeOfDay = "night";
             currentCondition = weatherCode.night;
             iconFolderPath = "icons/night";
+            iconCode = weatherCode.icon;
+            weatherIcon.src = `${iconFolderPath}/${iconCode}.png`;
           }
           console.log(weatherCode);
           console.log(timeOfDay);
-          console.log(currentCondition, "current condition");
-          // console.log(weatherIconCode);
+          console.log(currentCondition);
+          console.log(iconCode);
           console.log(iconFolderPath);
+          console.log(condition);
 
           const displayCondition = `
     <div> <h5> ${currentCondition}</h5></div>`;
